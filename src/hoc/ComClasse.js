@@ -5,7 +5,7 @@ import React from 'react';
 const comClasse = (ComponenteEnvolvido, nomeClasse) => {
    return props => (
      <div className={nomeClasse}>
-        <ComponenteEnvolvido/>
+        <ComponenteEnvolvido {...props}/>
      </div>
    );
 };
