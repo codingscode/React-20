@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import classes from './App.css'
 import Pessoas from './Pessoas/Pessoas'; 
 import Cockpit from './Cockpit/Cockpit';
-import ComClasse from './hoc/ComClasse';
+import comClasse from './hoc/comClasse';
+import Auxiliar from './hoc/Auxiliar'
+
 
 class App extends Component {
   constructor(props) {
@@ -84,7 +86,7 @@ class App extends Component {
     }
 
     return (
-      <ComClasse classes={classes.App}>
+      <Auxiliar > 
       <button onClick={() => {this.setState({mostrarCockpit: false})}}>Remover Cockpit</button>
         {this.state.mostrarCockpit ?
         <Cockpit 
@@ -93,10 +95,10 @@ class App extends Component {
         pessoasComprimento={this.state.pessoas.length} 
         clicked={this.toogleManipuladorPessoas} /> : null}
         {pessoas}
-      </ComClasse> 
+      </Auxiliar> 
     ); 
   }
 }
 
-export default App;
+export default comClasse(App, classes.App);
 
