@@ -43,7 +43,7 @@ const cockpit = (props) => {
         onClick={props.clicked}>Alternancia de Pessoas
         </button>
      </div>
-   );
+    );
 };
 
 export default React.memo(cockpit);
